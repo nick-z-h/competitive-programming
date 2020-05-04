@@ -4,8 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         int t = kb.nextInt();
-        kb.next();
-        for (int g = 0; g < t; t++) {
+        for (int g = 0; g < t; g++) {
             String a = kb.next();
             String b = kb.next();
             String c = kb.next();
