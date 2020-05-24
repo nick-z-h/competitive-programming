@@ -2,53 +2,37 @@
 
 using namespace std;
 
-bool v[1000001];
+int v[1000001];
 
 int main() {
-    int j, a, s = 0, m = 0, l = 0, c = 0;
+    int j, a;
     cin >> j >> a;
-    for(int i = 0; i < j; ++i) {
-        char C;
-        cin >> C;
-        switch(C) {
-            case 'S':
-                ++s;
-                break;
-            case 'M':
-                ++m;
-                break;
-            case 'L':
-                ++l;
-                break;
+    for(int i=1; i<=j; ++i) {
+        char t;
+        cin >> t;
+        if(t=='S') {
+            v[i]=0;
+        } else if(t=='M') {
+            v[i]=1;
+        } else if(t=='L') {
+            v[i]=2;
         }
     }
-    for(int i = 0; i < a; ++i) {
-        char C;
-        cin >> C;
-        int t;
-        cin >> t;
-        switch(C) {
-            case 'S':
-                if(s > 0 && v[t] == false) {
-                    --s;
-                    v[t] = true;
-                    ++c;
-                }
-                break;
-            case 'M':
-                if(m > 0 && v[t] == false) {
-                    --m;
-                    v[t] = true;
-                    ++c;
-                }
-                break;
-            case 'L':
-                if(l > 0 && v[t] == false) {
-                    --l;
-                    v[t] = true;
-                    ++c;
-                }
-                break;
+    int c = 0;
+    for(int i=1; i<=a; ++i) {
+        char t;
+        int at, s = 0;
+        cin >> t >> at;
+        if(t=='S') {
+            s=0;
+        } else if(t=='M') {
+            s=1;
+        } else if(t=='L') {
+            s=2;
+        }
+        if(at > 0 && at<=j && v[at]>=s) {
+            ++c;
+            v[at]=-1;
         }
     }
     cout << c << "\n";
