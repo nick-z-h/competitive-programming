@@ -13,9 +13,7 @@ int main() {
         }
         int r[b];
         for(int i = 0; i < b; ++i) {
-            int t;
-            cin >> t;
-            r[i] = t;
+            cin >> r[i];
         }
         for(int i = 0; i < n; ++i) {
             int d, c, v;
