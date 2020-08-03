@@ -18,9 +18,7 @@ int main() {
     cin >> m;
     int tp[m];
     for(int i = 0; i < m; ++i) {
-        int t;
-        cin >> t;
-        tp[i] = t;
+        cin >> tp[i];
     }
     int pr = 100000;
     for(int i = 0; i < n; ++i) {
